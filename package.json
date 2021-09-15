@@ -4,8 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node db/seeds.sql/"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "console.table": "^0.10.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "inquirer": "^8.1.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ecalderon10/Employee-Management-System.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ecalderon10/Employee-Management-System/issues"
+  },
+  "homepage": "https://github.com/Ecalderon10/Employee-Management-System#readme",
+  "keywords": []
 }

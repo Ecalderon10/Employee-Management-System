@@ -1,15 +1,16 @@
-INSERT INTO
-departments (department_name)
+USE employee_db;
+
+INSERT INTO departments (department_name)
 
 VALUES
-(
-"Executive",
-"Sales",
-"HR",
-"Engineering",
-"Finance",
-"Marketing"
-)
+
+("Executive"),
+("Sales"),
+("HR"),
+("Engineering"),
+("Finance"),
+("Marketing");
+
 
 INSERT INTO
 roles (title,Salary,department_id)
@@ -34,7 +35,7 @@ VAlUES
 ("Director of Engineering", 600000,4),
 ("Manager of Engineering", 300000,4),
 ("Engineer", 200000,4),
-("Scrum Master", 250000,4)
+("Scrum Master", 250000,4),
 ("Director of Finance", 600000,5),
 ("Manager of Money", 300000, 5),
 ("Accountant", 100000, 5),
@@ -42,14 +43,14 @@ VAlUES
 
 ("Director of MArketing", 600000, 6),
 ("Content MAnager", 300000, 6),
-("Social Media Manager", 50000, 6),
+("Social Media Manager", 50000, 6);
 
 INSERT INTO
 
 employees (first_name, last_name, role_id, manager_id)
 
 VALUES
-("Cristiano", "Ronaldo", 1,1),
+("Cristiano", "Ronaldo", 1, 1),
 ("Lionel", "MESSI", 2,1),
 ("Paul", "Pogba", 3,1),
 ("Eddie", "Chappie", 4,1),
@@ -63,34 +64,34 @@ VALUES
 ("Gareth", "Bale", 12,11),
 ("Alex", "Morgan", 13,12),
 ("James", "Arthur", 14,12),
-("Max" "Johnson", 15,11),
+("Max" ,"Johnson", 15,11),
 ("Dwight", "Howard", 16,2),
 ("Magic", "Johnson", 17,16),
-("Dr." "Dre", 18,17),
-("Bill" "Cosby",19,17)
+("Dr.", "Dre", 18,17),
+("Bill", "Cosby",19,17),
 ("Mike", "Jones", 20, 1),
 ("Nicholas", "Cage", 21,20),
 ("Ben", "Aflack", 22,20);
 
 SELECT
-employee.first_name,
-employee.last_name,
+employees.first_name,
+employees.last_name,
 roles.title,
 roles.salary,
-department.department_name,
+departments.department_name,
 employee.first_name as manager_firstname,
-employee.last_name as manager_lastname;
+employee.last_name as manager_lastname
 
 FROM
-employee
-JOIN roles on employee.role_id = roles.id 
-JOIN department on roles.department_id= department.id 
-LEFT JOIN employee as employee on employee.manager_id = emplyee.id;
+employees
+JOIN roles on employees.role_id = roles.id 
+JOIN departments on roles.department_id= departments.id 
+LEFT JOIN employees as employee on employees.manager_id = employee.id;
 
 SELECT 
 *
 FROM
-department;
+departments;
 SELECT 
 *
 FROM
@@ -98,4 +99,4 @@ roles;
 SELECT
 *
 FROM
-employee;
+employees;
